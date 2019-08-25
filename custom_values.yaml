@@ -1,0 +1,21 @@
+## Custom helm chart values
+##
+images:
+  gitea: "gitea/gitea:1.9.2"
+  postgres: "postgres:11.5-alpine"
+  memcached: "memcached:1.5.16-alpine"
+
+service:
+  http:
+    serviceType: LoadBalancer
+    port: 3000
+    externalPort: 3000
+    externalHost: localhost
+  ssh:
+    serviceType: LoadBalancer
+    port: 22
+    externalPort: 22
+    externalHost: localhost
+
+persistence:
+  enabled: true
