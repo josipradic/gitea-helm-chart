@@ -1,6 +1,6 @@
 name: gitea
-version: 1.6.1
-appVersion: 1.6.1
+version: 1.9.2
+appVersion: 1.9.2
 description: Git with a cup of tea
 icon: https://docs.gitea.io/images/gitea.png
 keywords:
@@ -14,5 +14,5 @@ sources:
 - https://github.com/go-gitea/gitea
 - https://hub.docker.com/r/gitea/gitea/
 maintainers:
-- name: John Felten
-  email: john.felten@gmail.com
+- name: Josip Radic
+  email: josip.radic@gmail.com
