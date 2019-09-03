@@ -15,6 +15,10 @@ spec:
     {{- if  .Values.service.http.nodePort }}
     nodePort: {{ .Values.service.http.nodePort }}
     {{- end }}
+    {{- if  .Values.service.http.externalPort }}
+    targetPort: {{ .Values.service.http.externalPort }}
+    {{- else }}
     targetPort: {{ .Values.service.http.port }}
+    {{- end }}
   selector:
     app: {{ template "fullname" . }}
