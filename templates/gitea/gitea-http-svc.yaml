@@ -11,14 +11,14 @@ spec:
   type: {{ .Values.service.http.serviceType }}
   ports:
   - name: http
-    port: {{ .Values.service.http.port }}
+    port: {{ .Values.service.http.externalPort }}
     {{- if  .Values.service.http.nodePort }}
     nodePort: {{ .Values.service.http.nodePort }}
     {{- end }}
-    {{- if  .Values.service.http.externalPort }}
-    targetPort: {{ .Values.service.http.externalPort }}
-    {{- else }}
+    {{- if  .Values.service.http.port }}
     targetPort: {{ .Values.service.http.port }}
+    {{- else }}
+    targetPort: {{ .Values.service.http.externalPort }}
     {{- end }}
   selector:
     app: {{ template "fullname" . }}
